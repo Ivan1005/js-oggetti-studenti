@@ -51,9 +51,12 @@ studenti.push(studenteAggiunto);
 console.log(studenti);
  // PROVO A STAMPARE
 
- var source = document.getElementById("entry-template").innerHTML;
- var template = Handlebars.compile(source);
- var context = { title: "My New Post", body: "hello"};
- var html = template(context);
- $('#post').append(html);
+ for (var i = 0 ; i < studenti.length ; i++) {
+   var student = studenti[i];
+   var source = document.getElementById("entry-template").innerHTML;
+   var template = Handlebars.compile(source);
+   var html = template(student);
+   $("#post").append(html);
+ }
+
 });
