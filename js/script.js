@@ -50,11 +50,10 @@ var studenteAggiunto = {
 studenti.push(studenteAggiunto);
 console.log(studenti);
  // PROVO A STAMPARE
-
+ var source = document.getElementById("entry-template").innerHTML;
+ var template = Handlebars.compile(source);
  for (var i = 0 ; i < studenti.length ; i++) {
    var student = studenti[i];
-   var source = document.getElementById("entry-template").innerHTML;
-   var template = Handlebars.compile(source);
    var html = template(student);
    $("#post").append(html);
  }
